@@ -35,6 +35,14 @@ app.get('/',function(req,res){
 	res.end();
 });
 
+app.get('/jota',function(req,res){
+
+	var body = '{ "nome": "Jotinha"}';
+	res.write(body);
+	res.end();
+});
+
+
 app.listen(8080,function(){
 	console.log("Conectado e escutando na porta 8080");
 });
