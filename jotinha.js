@@ -35,6 +35,6 @@ app.get('/',function(req,res){
 	res.end();
 });
 
-app.listen(8080,function(){
+app.listen(80,function(){
 	console.log("Conectado e escutando na porta 8080");
 });
