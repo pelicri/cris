@@ -1,0 +1,51 @@
+AWS - anotações
+
+//Script bootstrap
+//Interpretador dash
+=>
+#!/bin/bash
+yum update -y
+yum install git -yy
+
+//comando para baixar pacote npm/node
+//comando de instalar o NodeJS
+curl -sL https://rpm.nodesource.com/setup_11.x | sudo -E bash -
+yum install nodejs
+
+
+//Verificar instalações
+Node -v
+Npm -v
+
+//comando de clonar um git
+git clone https://github.com/pelicri/cris.git
+
+//comando linux para elevar o acesso root (administrador do sistema para efetuar atualizações)
+sudo su
++ senha
+
+
+Comando para ir para o diretório raiz da instancia linux
+Cd / 
+
+listar buckets da conta
+sws s3 ls
+Cd Aws
+
+//comando para acessar uma máquina via command line/terminal
+ssh 35.168.21.160 -l ec2-user -i ec2newkey.pem
+ssh 52.91.33.55 -l ec2-user -i ec2newkey.pem
+
+Conectar no ec2 via terminal
+
+Sudo su para ir para o root do ec2
+Aplicar o yum update (atualização do kernel)
+
+Criando chave e mudando acesso publico para chave funcionar
+Chmod 600 key.pem
+
+region
+instances
+us-east-1a
+i-06ba78349d4a360fa
+Yum install nodejs npm —enablerepo=epel - y
