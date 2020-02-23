@@ -23,15 +23,13 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.use(bodyParser.json())
+
 // GET
 app.get('/criarbucket',function(req,res){
-
-    var url_string = window.location.href;
-    var url = new URL(url_string);
-    var c = url.searchParams.get("c");
 	
     var params = {
-        Bucket: c
+        Bucket: req.body.bucketname   
     };
     s3.createBucket(params, function(err, data) {
         if (err) {
