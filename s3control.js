@@ -38,6 +38,7 @@ app.get('/criarbucket',function(req,res){
         } else {
           returnS3(data);
           console.log(data);
+          console.log("Bucket: " + req.body.bucketname + " criado com sucesso");
         }
     });
 
@@ -49,7 +50,7 @@ app.get('/criarbucket',function(req,res){
   		    +'	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>'
   		    +'	</head>'
   		    +'	<body>'
-  		    +	result
+  		    +	"Bucket: " + req.body.bucketname + " criado com sucesso"
   		    +'	</body>'
   	      +'</html>';
         console.log(result);
@@ -152,6 +153,7 @@ app.get('/deletarbucket',function(req,res){
         } else {
           returnS3(data);
           console.log(data);
+          console.log("Bucket: " + req.body.bucketname + " criado com sucesso");
         }
     });
 
@@ -162,7 +164,7 @@ app.get('/deletarbucket',function(req,res){
   		    +'	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>'
   		    +'	</head>'
   		    +'	<body>'
-  		    +	result
+  		    +	"Bucket: " + req.body.bucketname + " deletado com sucesso"
   		    +'	</body>'
   	         +'</html>';
         console.log(result);
