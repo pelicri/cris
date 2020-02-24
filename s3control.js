@@ -64,9 +64,9 @@ app.get('/criarbucket',function(req,res){
 // GET
 app.get('/criararquivo',function(req,res){
 	
-    var dstBucket = 'crischair-bucket';
+    var dstBucket = req.body.bucketname;
     var dstKey = 'arquivo.txt';
-    var arquivo = 'Parabéns Ninja, você completou com sucesso essa tarefa!';
+    var arquivo = 'Arquivo TXT criado com sucesso!';
 
     s3.putObject({
         Bucket: dstBucket,
@@ -107,7 +107,7 @@ app.get('/criararquivo',function(req,res){
 app.get('/deletararquivo',function(req,res){
 
     var params = {
-      Bucket: 'crischair-bucket',
+      Bucket: req.body.bucketname,
       Key: 'arquivo.txt'
     };
     s3.deleteObject(params, function(err, data) {
@@ -143,7 +143,7 @@ app.get('/deletararquivo',function(req,res){
 app.get('/deletarbucket',function(req,res){
 	
     var params = {
-        Bucket: 'crischair-bucket',
+        Bucket: req.body.bucketname,
     };
     s3.deleteBucket(params, function(err, data) {
         if (err) {
@@ -173,6 +173,25 @@ app.get('/deletarbucket',function(req,res){
 	
 });
 
+
+// GET
+app.get('/teste',function(req,res){
+
+        var body = '<html>'
+  		    +'	<head>'
+  		    +'	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>'
+  		    +'	</head>'
+  		    +'	<body>'
+  		    + req.body.nome
+  		    +'	</body>'
+  	         +'</html>';
+        console.log(req.body);
+        res.writeHead(200,{"Content-Type" : "text/html"});
+        res.write(body);
+        res.end();
+
+	
+});
 
 app.listen(80,function(){
   console.log("Conectado e escutando na porta 80");
