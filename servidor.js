@@ -1,0 +1,41 @@
+// Dependencias
+var express = require('express'); 
+var app = express();
+var bodyParser = require('body-parser');
+var aws2 = require('aws-sdk');
+var ip = require('node-ip');
+// Parsear o conteudo
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  	extended: true
+}));
+
+// Configuração da requisição, cabeçalhos, CORS
+app.use(function(req, res, next) {
+  	res.header("Access-Control-Allow-Origin", "*");
+  	// Métodos que queremos permitir
+  	res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  	next();
+});
+
+// GET
+app.get('/',function(req,res){
+	//var ip = location.host;
+	var body = '<html>'
+				+'	<head>'
+				+'	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>'
+				+'	</head>'
+				+'	<body>'
+				+	'<h1>Servidor: ' + ip.address() + '</h1>'
+				+'	</body>'
+			    +'</html>';
+	console.log(ip.address());
+	res.writeHead(200,{"Content-Type" : "text/html"});
+	res.write(body);
+	res.end();
+});
+
+app.listen(80,function(){
+	console.log("Conectado e escutando na porta 8080");
+});
