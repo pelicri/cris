@@ -3,8 +3,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var aws2 = require('aws-sdk');
-var ip = require('ip');
-
+var ip = require('node-ip');
 // Parsear o conteudo
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -22,7 +21,7 @@ app.use(function(req, res, next) {
 
 // GET
 app.get('/',function(req,res){
-	//var ip = self.location.host;
+	//var ip = location.host;
 	var body = '<html>'
 				+'	<head>'
 				+'	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>'
