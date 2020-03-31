@@ -1,0 +1,98 @@
+AWS - anotações
+
+Script bootstrap
+Interpretador dash
+=>
+[ec2-user ~]$ curl -sL https://rpm.nodesource.com/setup_11.x | sudo -E bash -
+#!/bin/bash
+yum update -y
+yum install git -yy
+yum install nodejs -y
+git clone https://github.com/pelicri/cris.git
+
+
+
+#!/bin/bash -ex
+# get node into yum
+curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+# install node (and npm) with yum
+yum -y install nodejs
+# install pm2 to restart node app
+npm i -g pm2@2.4.3
+yum update -y
+yum install git -yy
+git clone https://github.com/pelicri/cris.git /home/ec2-user/bin
+node /home/ec2-user/bin/servidor.js
+
+
+Verificar instalações
+Node -v
+Nem -v
+
+git clone https://github.com/pelicri/cris.git
+git clone https://github.com/pelicri/aulaAWScris.git
+
+Abrir 
+Ssh tcp 22
+Custom tcp rule tcp 8080
+
+Deletar pasta
+rm -rf pasta/
+
+No terminal - acesso de Adm digitar:
+Sudo su
++ senha
+
+
+Comando para ir para o diretório raiz da instancia linux
+Cd / 
+
+Aws s3 ls
+Cd Aws
+
+
+ssh 52.91.239.229 -l ec2-user -i ec2newkey.pem
+ssh 34.238.116.152 -l ec2-user -i ec2newkey.pem
+
+Conectar no ec2 via terminal
+
+Sudo su para ir para o root do ec2
+Aplicar o yum update (atualização do kernel)
+
+Criando chave e mudando acesso publico para chave funcionar
+Chmod 600 key.pem
+
+region
+instances
+us-east-1a
+i-06ba78349d4a360fa
+Yum install nodejs npm —enablerepo=epel - y
+
+{
+    "regiao": "$input.params('regiao')",
+    "tipo": "$input.params('tipo')"
+}
+
+
+
+Instalar o nodemon de forma global -g
+Nodemon sempre atualiza o código sem derrubar o serviço
+
+Sudo npm i  -g nodemon
+
+Rs no console restarta aplicação/
+
+Import time
+
+time.sleep(5)
+Import os
+
+Os.getevent(‘nome’davariavel);
+
+
+
+
+
+
+
+

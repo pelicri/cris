@@ -28,7 +28,11 @@ app.get('/',function(req,res){
 				+'	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>'
 				+'	</head>'
 				+'	<body>'
+<<<<<<< HEAD:jotinha.js
 				+	'<h1>Servidor: ' + ip.address() + '</h1>'
+=======
+				+	'<h1>Teste Cristiano 2020 - Servidor 1</h1>'
+>>>>>>> cf865a8f0895df74f1054247f7266574dc7e832c:server1.js
 				+'	</body>'
 			    +'</html>';
 	console.log(ip.address());
